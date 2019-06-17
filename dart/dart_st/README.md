@@ -29,7 +29,22 @@ UTF-16
 注释
  单行  //   多行注释 /* ....*/
 标识符
-关键字
+关键字：https://dart.dev/guides/language/language-tour
+  abstract（抽象类） 	dynamic（允许任何对象，泛型<>or 参数等） 	implements（实现类） 	show 
+  as 	else	import 	static 
+  assert	enum	in	super
+  async 	export 	interface 	switch
+  await 	extends	is	sync 
+  break	external 	library 	this
+  case	factory 	mixin 	throw
+  catch	false	new	true
+  class	final	null	try
+  const	finally	on 	typedef 
+  continue	for	operator 	var
+  covariant 	Function 	part 	void
+  default	get 	rethrow	while
+  deferred 	hide 	return	with
+  do	if	set 	yield 
 Literals 字面量; 常量
 操作符Operators（运算符 算数运算符 逻辑运算符 条件运算符 赋值运算符）
        算数：
@@ -134,6 +149,7 @@ Functions：一切皆对象 Function
         方法的作用域及调用：全局方法 实例方法 static静态方法类方法
         返回值： 
          f(){} 返回值为：null
+        异步方法：https://www.jianshu.com/p/024d7e604edd
 enum 枚举：
 Callable classes： 可调用的类
      To allow an instance of your Dart class to be called like a function, implement the call() method.
@@ -203,6 +219,17 @@ https://dart.dev/guides/libraries/create-library-packages
    try{}finally{}
    rethrow:
 
+dart 运行时：编译
+https://dart.dev/platforms 
+
+
+Dart Native: For programs targeting devices (mobile, desktop, server, and more), Dart Native includes both a Dart VM with JIT (just-in-time) compilation and an AOT (ahead-of-time) compiler for producing machine code.
+Dart Web: For programs targeting the web, Dart Web includes both a development time compiler (dartdevc) and a production time compiler (dart2js).
+
+垃圾收集：分代收集
+
+
+
 七.核心库（包括 线程 文件 net 同步）
 
 Asynchrony support 异步支持：
@@ -220,6 +247,16 @@ Generators 生成器
          To implement an asynchronous generator function, mark the function body as async*, and use yield statements to deliver values:
          If your generator is recursive, you can improve its performance by using yield*: 递归方法
 Isolates 隔离 多线程
+dart使用消息机制而不是共享内存模型
+Instead of threads, all Dart code runs inside of isolates. Each isolate has its own memory heap
+
+
+
+Typedefs 方法定义别名
+
+
+
+
 
 
 
