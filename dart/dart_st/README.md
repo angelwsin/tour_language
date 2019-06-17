@@ -235,7 +235,7 @@ Dart Web: For programs targeting the web, Dart Web includes both a development t
 Asynchrony support 异步支持：
 Dart 是单线程的，主线程由一个事件循环来执行
 
-
+dart 核心库：https://dart.dev/guides/libraries/library-tour#dartasync---asynchronous-programming
 
 八.特性
 泛型<>
@@ -246,6 +246,25 @@ Generators 生成器
    Asynchronous generator: Returns a Stream object.
          To implement an asynchronous generator function, mark the function body as async*, and use yield statements to deliver values:
          If your generator is recursive, you can improve its performance by using yield*: 递归方法
+
+    同步：
+    Iterable<int> naturalsTo(int n) sync* {
+      int k = 0;
+      while (k < n) yield k++;
+    }
+    异步：
+    Stream<int> asynchronousNaturalsTo(int n) async* {
+       int k = 0;
+       while (k < n) yield k++;
+     }
+    递归同步：
+    Iterable<int> naturalsDownFrom(int n) sync* {
+       if (n > 0) {
+        yield n;
+        yield* naturalsDownFrom(n - 1);
+       }
+    }
+
 Isolates 隔离 多线程
 dart使用消息机制而不是共享内存模型
 Instead of threads, all Dart code runs inside of isolates. Each isolate has its own memory heap

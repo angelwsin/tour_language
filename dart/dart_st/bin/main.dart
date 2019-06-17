@@ -7,6 +7,10 @@ main(List<String> arguments) async {
    var  resp =  asy();
   print("------end-----");
   print(resp);
+  for(var i in it()){
+    print(i);
+  }
+  
 }
 
 
@@ -16,5 +20,13 @@ Future<String> asy() async{
   var uri = new Uri.http('baidu.com',"",{});
   var request = await httpClient.getUrl(uri);
   var response = await request.close();
-  return response.toString();
+  var str = response.toString();
+  print(str);
+  return str;
+}
+
+Iterable<int>  it()sync*{
+   for(var i=0;i<10;i++){
+     yield i;
+   }
 }
